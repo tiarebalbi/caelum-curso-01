@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import br.com.caelum.financas.dao.ContaDAO;
+import br.com.caelum.financas.dao.BaseDAOImpl;
 import br.com.caelum.financas.modelo.Conta;
 import br.com.caelum.financas.util.JPAUtil;
 
@@ -20,9 +21,18 @@ public class ContaModelTest {
 		
 	 	EntityManager em = JPAUtil.getEm();
 		
-		ContaDAO dao = new ContaDAO(em);
-		dao.inserir(conta);
+	 	ContaDAO dao = new ContaDAO(em, Conta.class);
+		em.getTransaction().begin();
+		
+		Conta insert = dao.inserir(conta);
+		
+		dao.excluir(insert);
+		
+		em.getTransaction().commit();
 		List<Conta> contas = dao.lista();
+		
+		
+		em.close();
 		
 		System.out.println("Total: " + contas.size());
 		System.out.println("Conta Gravada com Sucesso");

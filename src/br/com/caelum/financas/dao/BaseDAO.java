@@ -9,4 +9,6 @@ public interface BaseDAO<T> {
 	 void excluir(T entidade);
 	 
 	 List<T> lista();
+	 
+	 T buscar(Long id);
 }
