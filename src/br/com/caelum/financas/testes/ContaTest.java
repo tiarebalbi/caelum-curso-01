@@ -18,6 +18,7 @@ public class ContaTest {
 		conta.setId(new Long(1l));
 		conta.setNumero("222");
 		conta.setTitular("Titular");
+		conta.setBanco("conta1");
 	}
 	
 	@Test
