@@ -31,7 +31,6 @@ public class ContaModelTest {
 		em.getTransaction().commit();
 		List<Conta> contas = dao.lista();
 		
-		
 		em.close();
 		
 		System.out.println("Total: " + contas.size());

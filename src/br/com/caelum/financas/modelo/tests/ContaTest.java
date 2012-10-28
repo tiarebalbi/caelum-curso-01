@@ -1,4 +1,4 @@
-package br.com.caelum.financas.testes;
+package br.com.caelum.financas.modelo.tests;
 
 import static org.junit.Assert.*;
 
@@ -7,10 +7,21 @@ import org.junit.Test;
 
 import br.com.caelum.financas.modelo.Conta;
 
+/**
+ * Conta Model
+ *
+ * @author tiarebalbi
+ * @date 27/10/2012
+ * @package br.com.caelum.financas.modelo.tests
+ */
 public class ContaTest {
 
 	private Conta conta;
 	
+	
+	/**
+	 * 
+	 */
 	@Before
 	public void setUp() {
 		conta = new Conta() ;
@@ -21,6 +32,9 @@ public class ContaTest {
 		conta.setBanco("conta1");
 	}
 	
+	/**
+	 * 
+	 */
 	@Test
 	public void deveTestarGet () {
 		assertEquals("Agencia", conta.getAgencia());

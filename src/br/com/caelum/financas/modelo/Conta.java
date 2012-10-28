@@ -5,6 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Entity;
 
+/**
+ * Entidade Conta
+ *
+ * @author tiarebalbi
+ * @date 27/10/2012
+ * @package br.com.caelum.financas.modelo
+ */
 @Entity
 public class Conta {
 	
@@ -78,10 +85,16 @@ public class Conta {
 		this.titular = titular;
 	}
 
+	/**
+	 * @param string
+	 */
 	public void setBanco(String string) {
 		this.banco = string;
 	}
 	
+	/**
+	 * @return <String>
+	 */
 	public String getBanco() {
 		return this.banco;
 	}
